@@ -1,0 +1,10 @@
+Sprung is a small game created for the One Game A Month site / motivational exercise.
+
+The player's goal is to reach the flag at the top of each randomly-generated level through a combination of bouncing on the square pads and using his/her jetpack (I know: awesome, right?). 
+
+Jetpack fuel (yellow bar) is limited, and can be replenished by picking up jerry cans.
+Oxygen (blue bar) is also limited, and can be replenished by picking up oxygen tanks.
+
+W/A/S/D moves, mouse looks, holding space fires the jetpack.
+
+Sprung was built using Unity 4 and the help of various free assets found both on the Unity Asset Store and online.

@@ -1,0 +1,42 @@
+Initialize engine version: 4.1.2f1 (911c7369eeac)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 9.0c [aticfx32.dll 8.17.10.1063]
+    Renderer: AMD Radeon HD 6770M
+    Vendor:   ATI
+    VRAM:     945 MB (via DXGI)
+    Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=1 DF24=1 INTZ=1 RAWZ=0 NULL=1 RESZ=1 SlowINTZ=1
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\William\Documents\Sprung\Build\Sprung_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\William\Documents\Sprung\Build\Sprung_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\William\Documents\Sprung\Build\Sprung_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\William\Documents\Sprung\Build\Sprung_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\William\Documents\Sprung\Build\Sprung_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\William\Documents\Sprung\Build\Sprung_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\William\Documents\Sprung\Build\Sprung_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
+Loading C:\Users\William\Documents\Sprung\Build\Sprung_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\William\Documents\Sprung\Build\Sprung_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading C:\Users\William\Documents\Sprung\Build\Sprung_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+Platform assembly: C:\Users\William\Documents\Sprung\Build\Sprung_Data\Managed\XInputDotNetPure.dll (this message is harmless)
+Loading C:\Users\William\Documents\Sprung\Build\Sprung_Data\Managed\XInputDotNetPure.dll into Unity Child Domain
+- Completed reload, in  0.343 seconds
+desktop: 2560x1440 60Hz; virtual: 2560x1440 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+Platform assembly: C:\Users\William\Documents\Sprung\Build\Sprung_Data\Managed\Boo.Lang.dll (this message is harmless)
+Platform assembly: C:\Users\William\Documents\Sprung\Build\Sprung_Data\Managed\UnityScript.Lang.dll (this message is harmless)
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 166 unused Assets to reduce memory usage. Loaded Objects now: 126.
+Total: 1.040302 ms (FindLiveObjects: 0.009481 ms CreateObjectMapping: 0.015549 ms MarkObjects: 0.195696 ms  DeleteObjects: 0.416424 ms)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 345.
+Total: 0.700867 ms (FindLiveObjects: 0.014411 ms CreateObjectMapping: 0.008343 ms MarkObjects: 0.233622 ms  DeleteObjects: 0.043235 ms)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 343.
+Total: 0.687972 ms (FindLiveObjects: 0.014032 ms CreateObjectMapping: 0.007964 ms MarkObjects: 0.235518 ms  DeleteObjects: 0.007964 ms)
+
