@@ -135,24 +135,24 @@ function Update () {
 		// Jetpack controls
 		if(Input.GetKey("space")){
 			if(fuel > 0){
-				if(!audio.isPlaying){
-					audio.Play();
+				if(!GetComponent.<AudioSource>().isPlaying){
+					GetComponent.<AudioSource>().Play();
 					jetpackFire.Play();
 					jetpackSmoke.Play();
 				}
-				var characterMotor = collider.GetComponent(CharacterMotor);
+				var characterMotor = GetComponent.<Collider>().GetComponent(CharacterMotor);
 				characterMotor.SetVelocity(characterMotor.movement.velocity + new Vector3(0, 30 * Time.deltaTime, 0)); // FIXME
 				characterMotor.movement.velocity.y = Mathf.Clamp(characterMotor.movement.velocity.y, -20.0, 30.0); // FIXME
 				// Consume fuel
 				fuel -= fuelPerSecond * Time.deltaTime;
 				fuel = Mathf.Clamp(fuel, 0, maxFuel);
 			}else{
-				audio.Stop();
+				GetComponent.<AudioSource>().Stop();
 				jetpackFire.Stop();
 				jetpackSmoke.Stop();
 			}
 		}else{
-			audio.Stop();
+			GetComponent.<AudioSource>().Stop();
 			jetpackFire.Stop();
 			jetpackSmoke.Stop();
 		}
@@ -232,7 +232,7 @@ private function DisableControls(){
 		var script : MouseLook = scripts[ii];
 		script.enabled = false;
 	}
-	Screen.showCursor = true;
+	Cursor.visible = true;
 }
 
 private function EnableControls(){
@@ -241,7 +241,7 @@ private function EnableControls(){
 		var script : MouseLook = scripts[ii];
 		script.enabled = true;
 	}
-	Screen.showCursor = false;
+	Cursor.visible = false;
 }
 
 public function WinGame(){
@@ -257,16 +257,16 @@ public function LoseGame(){
 	var fade: GameObject = new GameObject();
 	fade.AddComponent(GUITexture);
 	// and set it to the screen dimensions:
-	fade.guiTexture.pixelInset = Rect(0, 0, Screen.width, Screen.height);
+	fade.GetComponent.<GUITexture>().pixelInset = Rect(0, 0, Screen.width, Screen.height);
 	// set its texture to a black pixel:
 	var tex = new Texture2D(1, 1);
 	tex.SetPixel(0, 0, Color.black);
 	tex.Apply();
-	fade.guiTexture.texture = tex;
+	fade.GetComponent.<GUITexture>().texture = tex;
 	// then fade it during duration seconds
 	for (var alpha:float = 0.0; alpha < 1.0; ){
 		alpha += Time.deltaTime * 1.0;
-		fade.guiTexture.color.a = alpha;
+		fade.GetComponent.<GUITexture>().color.a = alpha;
 		yield;
 	}
 	// finally, reload the scene

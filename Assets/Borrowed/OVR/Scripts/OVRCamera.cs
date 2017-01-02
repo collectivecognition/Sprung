@@ -186,7 +186,7 @@ public class OVRCamera : OVRComponent
 		if(CameraTexture != null)
 		{
 			Graphics.SetRenderTarget(CameraTexture);
-			GL.Clear (true, true, gameObject.camera.backgroundColor);
+			GL.Clear (true, true, gameObject.GetComponent<Camera>().backgroundColor);
 		}
 	}
 	
@@ -220,7 +220,7 @@ public class OVRCamera : OVRComponent
 		}
 		
 		// Render into source texture before lens correction
-		Camera c = gameObject.camera;
+		Camera c = gameObject.GetComponent<Camera>();
 		RenderPreLensCorrection(ref c, ref SourceTexture);
 		
 		// Replace null material with lens correction material
@@ -242,7 +242,7 @@ public class OVRCamera : OVRComponent
 		Vector3    dir = Vector3.forward;		
 		
 		// Main camera has a depth of 0, so it will be rendered first
-		if(gameObject.camera.depth == 0.0f)
+		if(gameObject.GetComponent<Camera>().depth == 0.0f)
 		{			
 			// If desired, update parent transform y rotation here
 			// This is useful if we want to track the current location of
@@ -250,7 +250,7 @@ public class OVRCamera : OVRComponent
 			// TODO: Future support for x and z, and possibly change to a quaternion
 			if(SetParentYRotation == true)
 			{
-				Vector3 a = gameObject.camera.transform.rotation.eulerAngles;
+				Vector3 a = gameObject.GetComponent<Camera>().transform.rotation.eulerAngles;
 				a.x = 0; 
 				a.z = 0;
 				gameObject.transform.parent.transform.eulerAngles = a;
@@ -280,15 +280,15 @@ public class OVRCamera : OVRComponent
 		
 		// * * *
 		// Update camera rotation
-		gameObject.camera.transform.rotation = q;
+		gameObject.GetComponent<Camera>().transform.rotation = q;
 		
 		// * * *
 		// Update camera position (first add Offset to parent transform)
-		gameObject.camera.transform.position = 
-		gameObject.camera.transform.parent.transform.position + NeckPosition;
+		gameObject.GetComponent<Camera>().transform.position = 
+		gameObject.GetComponent<Camera>().transform.parent.transform.position + NeckPosition;
 	
 		// Adjust neck by taking eye position and transforming through q
-		gameObject.camera.transform.position += q * EyePosition;
+		gameObject.GetComponent<Camera>().transform.position += q * EyePosition;
 
 		// PGG Alternate calculation for above...
 		//Vector3 EyePositionNoX = EyePosition; EyePositionNoX.x = 0.0f;
@@ -305,10 +305,10 @@ public class OVRCamera : OVRComponent
 	// We will create our own perspective matrix
 	void CreatePerspectiveMatrix(ref Matrix4x4 m)
 	{
-		float nearClip = gameObject.camera.nearClipPlane;
-		float farClip = gameObject.camera.farClipPlane;
-		float tanHalfFov = Mathf.Tan(Mathf.Deg2Rad * gameObject.camera.fov * 0.5f);
-		float ar = gameObject.camera.aspect;
+		float nearClip = gameObject.GetComponent<Camera>().nearClipPlane;
+		float farClip = gameObject.GetComponent<Camera>().farClipPlane;
+		float tanHalfFov = Mathf.Tan(Mathf.Deg2Rad * gameObject.GetComponent<Camera>().fov * 0.5f);
+		float ar = gameObject.GetComponent<Camera>().aspect;
 		m.m00 = 1.0f / (ar * tanHalfFov);
 		m.m11 = 1.0f / tanHalfFov;
 		m.m22 = farClip / (nearClip - farClip);
@@ -426,12 +426,12 @@ public class OVRCamera : OVRComponent
 		// NOTE: Unity skyboxes do not currently use the projection matrix, so
 		// if one wants to use a skybox with the Rift it must be implemented 
 		// manually
-		gameObject.camera.ResetProjectionMatrix();
+		gameObject.GetComponent<Camera>().ResetProjectionMatrix();
 		Matrix4x4 m = Matrix4x4.identity;// = gameObject.camera.projectionMatrix;
 		CreatePerspectiveMatrix(ref m);
 		Matrix4x4 tm = Matrix4x4.identity;
 		tm.SetColumn (3, new Vector4 (offset.x, offset.y, 0.0f, 1));
-		gameObject.camera.projectionMatrix = tm * m;
+		gameObject.GetComponent<Camera>().projectionMatrix = tm * m;
 	}
 	
 	
